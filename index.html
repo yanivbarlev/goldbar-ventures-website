@@ -126,6 +126,7 @@
             display: flex;
             align-items: center;
             overflow: hidden;
+            padding-top: 80px; /* Account for fixed header */
         }
 
         .hero::before {
@@ -540,6 +541,10 @@
                 padding: 0 20px;
             }
 
+            .hero {
+                padding-top: 100px; /* Extra padding for mobile */
+            }
+
             .hero h1 {
                 font-size: 2.8rem;
             }
@@ -809,9 +814,6 @@
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    // Close mobile nav if open
-                    closeMobileNav();
-                    
                     // Scroll to target with offset for fixed header
                     const headerHeight = document.querySelector('header').offsetHeight;
                     const targetPosition = target.offsetTop - headerHeight;
