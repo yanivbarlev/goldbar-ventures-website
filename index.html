@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goldbar Ventures LTD - Precision in Digital Excellence</title>
+    <meta name="description" content="Goldbar Ventures LTD - Elite ad tech company delivering precision-engineered digital solutions. Partners with NASDAQ leaders IAC, Inuvo, System1.">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        
+        :root {
+            --gold: #DAA520;
+            --dark-gold: #B8860B;
+            --platinum: #E5E4E2;
+            --charcoal: #1a1a1a;
+            --deep-black: #0a0a0a;
+            --silver: #C0C0C0;
+            --accent-blue: #0066FF;
+            --success-green: #00D4AA;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: var(--deep-black);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* DRAMATIC HEADER */
+        header {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(218, 165, 32, 0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+
+        .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--gold), #FFD700, var(--dark-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--platinum);
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::before {
+            width: 100%;
+        }
+
+        /* DRAMATIC HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--deep-black) 0%, #1a1a1a 50%, var(--charcoal) 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(218, 165, 32, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 102, 255, 0.1) 0%, transparent 50%),
+                linear-gradient(135deg, transparent 0%, rgba(218, 165, 32, 0.05) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-subtitle {
+            color: var(--gold);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #fff 0%, var(--platinum) 50%, var(--gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-tagline {
+            font-size: 1.4rem;
+            color: var(--platinum);
+            margin-bottom: 2rem;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 4rem;
+            margin: 3rem 0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            color: var(--deep-black);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(218, 165, 32, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--platinum);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border: 2px solid var(--platinum);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: var(--platinum);
+            color: var(--deep-black);
+            transform: translateY(-3px);
+        }
+
+        /* FLOATING ELEMENTS */
+        .floating-element {
+            position: absolute;
+            background: linear-gradient(135deg, var(--gold), transparent);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-1 {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-2 {
+            width: 60px;
+            height: 60px;
+            top: 60%;
+            right: 20%;
+            animation-delay: 2s;
+        }
+
+        .floating-3 {
+            width: 80px;
+            height: 80px;
+            top: 80%;
+            right: 5%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+        }
+
+        /* PREMIUM SECTIONS */
+        .section {
+            padding: 8rem 0;
+            position: relative;
+        }
+
+        .section-dark {
+            background: var(--charcoal);
+        }
+
+        .section-darker {
+            background: var(--deep-black);
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--silver);
+            max-width: 600px;
+            margin: 0 auto 4rem;
+            font-weight: 300;
+        }
+
+        /* SERVICES GRID */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9), rgba(42, 42, 42, 0.9));
+            border: 1px solid rgba(218, 165, 32, 0.2);
+            padding: 3rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--gold);
+            box-shadow: 0 25px 50px rgba(218, 165, 32, 0.2);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .service-card p {
+            color: var(--silver);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* PARTNERS SECTION */
+        .partners-showcase {
+            background: var(--deep-black);
+            border-top: 1px solid rgba(218, 165, 32, 0.3);
+            border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .partner-card {
+            background: linear-gradient(135deg, rgba(26, 26, 26, 0.8), rgba(42, 42, 42, 0.8));
+            padding: 3rem;
+            text-align: center;
+            border: 2px solid rgba(218, 165, 32, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .partner-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(218, 165, 32, 0.15);
+        }
+
+        .partner-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .nasdaq-badge {
+            background: linear-gradient(135deg, var(--accent-blue), #0052CC);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* METRICS SECTION */
+        .metrics {
+            background: var(--charcoal);
+            text-align: center;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .metric {
+            padding: 2rem;
+        }
+
+        .metric-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 1rem;
+            color: var(--silver);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .metric-description {
+            font-size: 0.9rem;
+            color: var(--platinum);
+            margin-top: 0.5rem;
+        }
+
+        /* CONTACT SECTION */
+        .contact {
+            background: linear-gradient(135deg, var(--deep-black), var(--charcoal));
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            margin-top: 4rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid rgba(218, 165, 32, 0.3);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(42, 42, 42, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(218, 165, 32, 0.1);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gold), var(--dark-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--deep-black);
+            font-weight: bold;
+        }
+
+        .contact-details h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .contact-details p {
+            color: var(--platinum);
+            font-size: 1rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--deep-black);
+            border-top: 1px solid rgba(218, 165, 32, 0.3);
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            color: var(--silver);
+            font-size: 0.9rem;
+        }
+
+        .footer-highlight {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-100px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Goldbar</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#excellence">Excellence</a></li>
+                <li><a href="#precision">Precision</a></li>
+                <li><a href="#partnerships">Partnerships</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="floating-element floating-1"></div>
+            <div class="floating-element floating-2"></div>
+            <div class="floating-element floating-3"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-subtitle fade-in">Elite Digital Architecture</div>
+                    <h1 class="fade-in">GOLDBAR VENTURES</h1>
+                    <p class="hero-tagline fade-in">Where precision engineering meets digital excellence. We don't just develop ad tech—we architect the future of digital engagement.</p>
+                    
+                    <div class="hero-stats fade-in">
+                        <div class="stat">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Years of Excellence</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-label">NASDAQ Partners</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Precision Standard</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-group fade-in">
+                        <a href="#contact" class="cta-primary">ENGAGE NOW</a>
+                        <a href="#excellence" class="cta-secondary">DISCOVER MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="excellence" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title fade-in">ENGINEERED FOR EXCELLENCE</h2>
+                <p class="section-subtitle fade-in">Every line of code, every strategic decision, every partnership—crafted with surgical precision to deliver extraordinary results.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <span class="service-icon">⚡</span>
+                        <h3>Browser Extensions</h3>
+                        <p>Precision-engineered browser technologies that seamlessly integrate into user workflows, delivering exceptional engagement rates and revenue optimization through cutting-edge ad tech innovation.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <span class="service-icon">🎯</span>
+                        <h3>Search Feed Mastery</h3>
+                        <p>Advanced algorithmic search feed systems that deliver hyper-relevant content streams, maximizing user engagement while optimizing advertiser ROI through intelligent targeting mechanisms.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <span class="service-icon">🏗️</span>
+                        <h3>Premium Content Platforms</h3>
+                        <p>Architecturally superior content websites engineered for maximum performance, featuring advanced SEO optimization and sophisticated monetization strategies that deliver consistent results.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <span class="service-icon">💎</span>
+                        <h3>Strategic Investments</h3>
+                        <p>Elite-tier investment services for promising digital ventures, combining our deep technical expertise with strategic capital to accelerate growth and market penetration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="precision" class="section metrics">
+            <div class="container">
+                <h2 class="section-title fade-in">PRECISION IN NUMBERS</h2>
+                <p class="section-subtitle fade-in">Our track record speaks to our commitment to excellence and precision in every aspect of digital innovation.</p>
+                
+                <div class="metrics-grid">
+                    <div class="metric fade-in">
+                        <span class="metric-number">2009</span>
+                        <span class="metric-label">ESTABLISHED</span>
+                        <p class="metric-description">Founded at the dawn of modern ad tech</p>
+                    </div>
+                    <div class="metric fade-in">
+                        <span class="metric-number">100%</span>
+                        <span class="metric-label">NASDAQ PARTNERS</span>
+                        <p class="metric-description">Only elite-tier partnerships</p>
+                    </div>
+                    <div class="metric fade-in">
+                        <span class="metric-number">24/7</span>
+                        <span class="metric-label">PRECISION</span>
+                        <p class="metric-description">Continuous optimization and monitoring</p>
+                    </div>
+                    <div class="metric fade-in">
+                        <span class="metric-number">∞</span>
+                        <span class="metric-label">INNOVATION</span>
+                        <p class="metric-description">Limitless pursuit of excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnerships" class="section partners-showcase">
+            <div class="container">
+                <h2 class="section-title fade-in">ELITE PARTNERSHIPS</h2>
+                <p class="section-subtitle fade-in">Strategic alliances with market leaders who share our commitment to precision and excellence in digital innovation.</p>
+                
+                <div class="partners-grid">
+                    <div class="partner-card slide-in-left">
+                        <div class="partner-logo">IAC / ASK.COM</div>
+                        <p>Premier internet and media conglomerate with a portfolio of industry-leading brands and cutting-edge digital products.</p>
+                        <span class="nasdaq-badge">NASDAQ: IAC</span>
+                    </div>
+                    <div class="partner-card fade-in">
+                        <div class="partner-logo">INUVO</div>
+                        <p>Advanced technology platform developing proprietary data technologies and sophisticated digital marketing solutions.</p>
+                        <span class="nasdaq-badge">NASDAQ: INUV</span>
+                    </div>
+                    <div class="partner-card slide-in-right">
+                        <div class="partner-logo">SYSTEM1</div>
+                        <p>Omnichannel customer acquisition powerhouse specializing in intent-driven marketing and advanced analytics.</p>
+                        <span class="nasdaq-badge">NASDAQ: SST</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title fade-in">ENGAGE WITH EXCELLENCE</h2>
+                <p class="section-subtitle fade-in">Ready to experience precision-engineered digital solutions? Connect with our team of experts.</p>
+                
+                <div class="contact-content">
+                    <div class="contact-info slide-in-left">
+                        <div class="contact-item">
+                            <div class="contact-icon">📧</div>
+                            <div class="contact-details">
+                                <h4>Direct Communication</h4>
+                                <p>yaniv@goldbarventures.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🏢</div>
+                            <div class="contact-details">
+                                <h4>Global Headquarters</h4>
+                                <p>Duvdevan 9, Kiryat Ono, Israel</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">⚡</div>
+                            <div class="contact-details">
+                                <h4>Excellence Since</h4>
+                                <p>2009 - 15+ Years of Innovation</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">🎯</div>
+                            <div class="contact-details">
+                                <h4>Mission Focus</h4>
+                                <p>Precision Digital Architecture</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-in-right">
+                        <div style="background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(26, 26, 26, 0.8)); padding: 3rem; border: 1px solid rgba(218, 165, 32, 0.3);">
+                            <h3 style="color: var(--gold); margin-bottom: 2rem; font-size: 1.8rem;">Ready to Experience Excellence?</h3>
+                            <p style="color: var(--platinum); line-height: 1.8; margin-bottom: 2rem;">
+                                Join the ranks of industry leaders who trust Goldbar Ventures for precision-engineered digital solutions. Our team of experts is ready to architect your success.
+                            </p>
+                            <a href="mailto:yaniv@goldbarventures.com" class="cta-primary" style="display: inline-block;">INITIATE CONTACT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 <span class="footer-highlight">Goldbar Ventures LTD</span> | Engineering Digital Excellence Since 2009 | <span class="footer-highlight">Precision. Innovation. Results.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Advanced intersection observer for animations
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Dynamic header effects
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(10, 10, 10, 0.98)';
+                header.style.borderBottom = '1px solid rgba(218, 165, 32, 0.4)';
+            } else {
+                header.style.background = 'rgba(10, 10, 10, 0.95)';
+                header.style.borderBottom = '1px solid rgba(218, 165, 32, 0.2)';
+            }
+            
+            lastScrollY = scrollY;
+        });
+
+        // Enhanced hover effects for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+                this.style.boxShadow = '0 25px 50px rgba(218, 165, 32, 0.2)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Partner card enhanced effects
+        document.querySelectorAll('.partner-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.borderColor = 'var(--gold)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.borderColor = 'rgba(218, 165, 32, 0.2)';
+            });
+        });
+
+        // Metric counter animation
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                if (target === Infinity) {
+                    element.textContent = '∞';
+                } else {
+                    element.textContent = Math.floor(current) + (target === 2009 ? '' : target === 100 ? '%' : target === 24 ? '/7' : '');
+                }
+            }, 20);
+        }
+
+        // Trigger counter animations when metrics section is visible
+        const metricsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.metric-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent;
+                        if (text === '2009') animateCounter(num, 2009);
+                        else if (text === '100%') animateCounter(num, 100);
+                        else if (text === '24/7') animateCounter(num, 24);
+                        else if (text === '∞') num.textContent = '∞';
+                    });
+                    metricsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const metricsSection = document.querySelector('.metrics');
+        if (metricsSection) {
+            metricsObserver.observe(metricsSection);
+        }
+
+        // Add premium cursor effects
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.createElement('div');
+            cursor.className = 'cursor-trail';
+            cursor.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: linear-gradient(135deg, var(--gold), transparent);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 9999;
+                left: ${e.clientX}px;
+                top: ${e.clientY}px;
+                animation: cursorFade 0.5s ease-out forwards;
+            `;
+            document.body.appendChild(cursor);
+            
+            setTimeout(() => cursor.remove(), 500);
+        });
+
+        // Add cursor fade animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes cursorFade {
+                0% { opacity: 1; transform: scale(1); }
+                100% { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
